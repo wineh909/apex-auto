@@ -122,9 +122,9 @@ svg.icon.fill, svg.fill { fill: currentColor; stroke: none; }
 .mobile-menu .btn { margin-top: 14px; }
 
 /* ---------------- Hero ---------------- */
-.hero { padding: calc(var(--header-h) + 54px) 0 70px; position: relative; overflow: hidden; }
+.hero { padding: calc(var(--header-h) + 54px) 0 70px; position: relative; overflow: hidden; min-height: min(880px, 92vh); display: flex; align-items: center; }
 .hero-glow { position: absolute; top: -14%; right: -8%; width: 780px; height: 780px; border-radius: 50%; background: radial-gradient(circle, rgba(170, 178, 190, .16), transparent 62%); filter: blur(10px); z-index: 0; pointer-events: none; }
-.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.08fr .92fr; gap: 40px; align-items: center; }
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 40px; width: 100%; }
 .hero-title { font-size: clamp(2.5rem, 5.6vw, 4.5rem); text-transform: uppercase; letter-spacing: -.015em; line-height: .98; margin: 6px 0 22px; }
 .hero-quote { text-transform: none; font-size: clamp(1.5rem, 3vw, 2.7rem); line-height: 1.22; letter-spacing: -.01em; font-weight: 800; max-width: 640px; }
 .hero-sub { font-size: clamp(1rem, 1.3vw, 1.18rem); color: var(--text); max-width: 500px; }
