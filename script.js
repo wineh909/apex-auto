@@ -255,6 +255,16 @@
     ba.addEventListener("pointercancel", () => { drag = false; });
   });
 
+  /* ---- Background video: nudge autoplay + resume on focus ---- */
+  (function () {
+    const v = $(".bg__video");
+    if (!v) return;
+    const play = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    play();
+    v.addEventListener("canplay", play, { once: true });
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) play(); });
+  })();
+
   /* ---- Footer year ---- */
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 })();
