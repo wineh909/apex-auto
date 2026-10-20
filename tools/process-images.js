@@ -8,7 +8,7 @@ const out = path.resolve(__dirname, "../assets");
 
 // [source, output, width, height, extra(img)=>void]
 const jobs = [
-  ["hero-a.jpg", "hero.jpg", 1160, 1160],              // circular hero medallion (G-Class)
+  ["hero2-b.jpg", "hero.jpg", 1280, 960],              // hero panel — dramatic dark sports car
   ["hero-b.jpg", "work-1.jpg", 900, 675],              // наши работы — спорткар
   ["work-interior.jpg", "work-2.jpg", 900, 675],       // детейлинг салона
   ["work-wheel.jpg", "work-3.jpg", 900, 675],          // диски / тюнинг
@@ -16,7 +16,7 @@ const jobs = [
   ["dirty-black.jpg", "ba-before-1.jpg", 840, 630],    // до — грязный кузов
   ["work-bw.jpg", "ba-after-1.jpg", 840, 630],         // после — зеркальный блеск
   ["dirty-suv.jpg", "ba-before-2.jpg", 840, 630],      // до — грязный внедорожник
-  ["work-lexus.jpg", "ba-after-2.jpg", 840, 630],      // после — чистый глянец
+  ["clean-suv.jpg", "ba-after-2.jpg", 840, 630],       // после — чистый тёмный внедорожник
   ["garage.jpg", "about.jpg", 1100, 760],              // мастерская
 ];
 

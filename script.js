@@ -199,7 +199,7 @@
       }
       if (!ok) return;
       // ---- Ready for backend: send { service, date, time, name, phone } here. ----
-      const text = "Услуга: " + serviceEl.value + " · " + fmt(selDate) + " в " + selTime +
+      const text = "Услуга: " + serviceEl.dataset.value + " · " + fmt(selDate) + " в " + selTime +
         ". Мы свяжемся с вами по номеру " + phoneEl.value.trim() + " для подтверждения.";
       openModal(text);
       // reset
@@ -211,6 +211,49 @@
     renderSlots();
     updatePick();
   })();
+
+  /* ---- Custom selects (service dropdown — readable on dark theme) ---- */
+  $$(".cselect").forEach((sel) => {
+    const btn = $(".cselect-btn", sel);
+    const valEl = $(".cselect-val", sel);
+    if (!btn || !valEl) return;
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = sel.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+    $$(".cselect-opt", sel).forEach((opt) => {
+      opt.addEventListener("click", () => {
+        sel.dataset.value = opt.dataset.value;
+        valEl.textContent = opt.textContent;
+        $$(".cselect-opt", sel).forEach((o) => o.classList.toggle("is-sel", o === opt));
+        sel.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      });
+    });
+  });
+  document.addEventListener("click", () => {
+    $$(".cselect.open").forEach((s) => {
+      s.classList.remove("open");
+      const b = $(".cselect-btn", s);
+      if (b) b.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  /* ---- Before / after sliders (drag to compare) ---- */
+  $$(".ba").forEach((ba) => {
+    const range = ba.querySelector(".ba-range");
+    if (!range) return;
+    const set = (v) => { v = Math.max(0, Math.min(100, v)); ba.style.setProperty("--pos", v + "%"); range.value = v; };
+    set(50);
+    range.addEventListener("input", () => set(+range.value));
+    const pct = (e) => { const r = ba.getBoundingClientRect(); return ((e.clientX - r.left) / r.width) * 100; };
+    let drag = false;
+    ba.addEventListener("pointerdown", (e) => { drag = true; try { ba.setPointerCapture(e.pointerId); } catch (x) {} set(pct(e)); e.preventDefault(); });
+    ba.addEventListener("pointermove", (e) => { if (drag) set(pct(e)); });
+    ba.addEventListener("pointerup", () => { drag = false; });
+    ba.addEventListener("pointercancel", () => { drag = false; });
+  });
 
   /* ---- Footer year ---- */
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
