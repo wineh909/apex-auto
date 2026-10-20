@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>APEX Auto Studio — тюнинг, детейлинг и ремонт авто в Москве</title>
+  <meta name="description" content="APEX Auto Studio — премиальный автосервис: диагностика, ремонт, тюнинг, детейлинг, оклейка плёнкой и шиномонтаж. Онлайн-запись на удобное время." />
+  <meta name="theme-color" content="#09090a" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="APEX Auto Studio — тюнинг и детейлинг" />
+  <meta property="og:description" content="Превращаем авто в идеал. Диагностика, тюнинг, детейлинг, оклейка плёнкой. Онлайн-запись." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- ========================= ICON SPRITE ========================= -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+      <symbol id="i-mouse" viewBox="0 0 24 24"><rect x="8" y="3.5" width="8" height="17" rx="4"/><path d="M12 7.5v3.5"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.7 6.2.6-4.7 4.2 1.4 6.1L12 16.9l-5.5 2.9 1.4-6.1-4.7-4.2 6.2-.6z"/></symbol>
+      <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 16.5a8 8 0 0 1 16 0"/><path d="M12 16.5l4.2-4.6"/><circle cx="12" cy="16.5" r="1.3"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M15.5 4.5a4.2 4.2 0 0 0-5.1 5.3l-6 6a1.7 1.7 0 0 0 2.4 2.4l6-6a4.2 4.2 0 0 0 5.3-5.1l-2.7 2.7-2.3-2.3 2.4-2.7z"/></symbol>
+      <symbol id="i-tune" viewBox="0 0 24 24"><path d="M4 8h8M16.5 8H20M4 16h3.5M12 16h8"/><circle cx="14" cy="8" r="2.4"/><circle cx="9.5" cy="16" r="2.4"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3.5l1.7 4.6 4.6 1.7-4.6 1.7L11 16l-1.7-4.5L4.7 9.8l4.6-1.7z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+      <symbol id="i-film" viewBox="0 0 24 24"><path d="M12 3.3l8.5 4.7-8.5 4.7L3.5 8z"/><path d="M3.5 13l8.5 4.7 8.5-4.7"/></symbol>
+      <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/><path d="M12 3.5v4M12 16.5v4M3.5 12h4M16.5 12h4"/></symbol>
+      <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.4v3M12 18.6v3M4.3 4.3l2.1 2.1M17.6 17.6l2.1 2.1M2.4 12h3M18.6 12h3M4.3 19.7l2.1-2.1M17.6 6.4l2.1-2.1"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.6a3.2 3.2 0 0 1 0 6.3M21 20a6 6 0 0 0-4.6-5.8"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6l7-3z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6l-1 7.5 8-10.5h-6l1-7.5z"/></symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20 12l-8 8-9-9V4h7l10 8z"/><circle cx="7.6" cy="7.6" r="1.6"/></symbol>
+      <symbol id="i-telegram" viewBox="0 0 24 24" class="fill"><path d="M21.6 4.3L2.9 11.5c-.9.35-.86 1.66.07 1.95l4.6 1.43 1.77 5.3c.2.6.98.75 1.4.27l2.5-2.78 4.63 3.4c.52.38 1.26.1 1.4-.53l3.1-14.1c.17-.76-.57-1.4-1.3-1.1zM9.9 14.3l8.4-5.2c.15-.09.3.12.17.24l-6.9 6.3c-.24.22-.4.53-.44.86l-.24 2.2-1-4.6z"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 11.5L20 4l-5.5 16-3-7-7.5-1.5z"/><path d="M11.5 13.5L20 4"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ========================= HEADER ========================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="APEX Auto Studio — на главную">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 7l14 34h-8l-2.6-7h-7.3L17.5 41h-8L24 7zm-2 21h4l-2-5.4-2 5.4z"/></svg>
+        </span>
+        <span class="brand-text"><b>APEX</b><i>AUTO&nbsp;STUDIO</i></span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#top">Главная</a>
+        <a href="#services">Услуги</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#about">О&nbsp;нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a class="btn btn-primary header-cta" href="#booking">Записаться <svg class="icon"><use href="#i-arrow"/></svg></a>
+
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#top">Главная</a>
+    <a href="#services">Услуги</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#about">О нас</a>
+    <a href="#contacts">Контакты</a>
+    <a class="btn btn-primary btn-block" href="#booking">Записаться <svg class="icon"><use href="#i-arrow"/></svg></a>
+  </div>
+
+  <main>
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Автосервис · Тюнинг · Детейлинг</p>
+          <h1 class="hero-title">Тюнинг.<br/>Детейлинг.<br/><span class="chrome-text">Автосервис.</span></h1>
+          <p class="hero-sub">Превращаем авто в&nbsp;идеал. Современное оборудование, опытные мастера и&nbsp;индивидуальный подход к&nbsp;каждому автомобилю.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#booking">Записаться <svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost btn-lg" href="#services">Услуги <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="hero-stats">
+            <div><b>8+</b><span>лет опыта</span></div>
+            <div><b>5&nbsp;000+</b><span>авто в&nbsp;работе</span></div>
+            <div class="hero-rating"><b><svg class="icon"><use href="#i-star"/></svg> 4.9</b><span>средняя оценка</span></div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-ring" aria-hidden="true"></div>
+          <div class="hero-medallion">
+            <img src="assets/hero.jpg" alt="Тонированный Mercedes G-Class в боксе APEX Auto Studio" width="560" height="560" fetchpriority="high" />
+          </div>
+          <div class="hero-badge hero-badge--1"><svg class="icon"><use href="#i-shield"/></svg><span>Гарантия<br/>на&nbsp;работы</span></div>
+          <div class="hero-badge hero-badge--2"><svg class="icon"><use href="#i-sparkle"/></svg><span>Детейлинг<br/>премиум</span></div>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#services" aria-label="Листать вниз">
+        <svg class="icon"><use href="#i-mouse"/></svg><span>Листай вниз</span>
+      </a>
+    </section>
+
+    <!-- ========================= SERVICES ========================= -->
+    <!-- ✏️ Услуги и цены легко меняются прямо здесь: заголовок, описание, цена. -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">Услуги</p>
+            <h2 class="reveal">Полный спектр работ по&nbsp;вашему авто</h2>
+          </div>
+          <p class="section-sub reveal">От&nbsp;диагностики до&nbsp;полного преображения — всё в&nbsp;одном месте, с&nbsp;прозрачными ценами и&nbsp;гарантией.</p>
+        </div>
+
+        <div class="services-grid">
+          <a class="service-card reveal" href="#booking">
+            <span class="service-ic"><svg class="icon"><use href="#i-gauge"/></svg></span>
+            <h3>Диагностика</h3>
+            <p>Компьютерная и&nbsp;инструментальная диагностика всех систем автомобиля.</p>
+            <div class="service-foot"><span class="price">от 1&nbsp;500&nbsp;₽</span><svg class="icon arr"><use href="#i-arrow"/></svg></div>
+          </a>
+          <a class="service-card reveal" href="#booking">
+            <span class="service-ic"><svg class="icon"><use href="#i-wrench"/></svg></span>
+            <h3>Ремонт двигателя</h3>
+            <p>Техническое обслуживание, замена узлов и&nbsp;капитальный ремонт ДВС.</p>
+            <div class="service-foot"><span class="price">от 5&nbsp;000&nbsp;₽</span><svg class="icon arr"><use href="#i-arrow"/></svg></div>
+          </a>
+          <a class="service-card reveal" href="#booking">
+            <span class="service-ic"><svg class="icon"><use href="#i-tune"/></svg></span>
+            <h3>Тюнинг</h3>
+            <p>Чип-тюнинг, доработка подвески, выхлопа и&nbsp;внешнего обвеса.</p>
+            <div class="service-foot"><span class="price">от 10&nbsp;000&nbsp;₽</span><svg class="icon arr"><use href="#i-arrow"/></svg></div>
+          </a>
+          <a class="service-card reveal" href="#booking">
+            <span class="service-ic"><svg class="icon"><use href="#i-sparkle"/></svg></span>
+            <h3>Детейлинг</h3>
+            <p>Комплексный уход: полировка кузова, химчистка салона, керамика.</p>
+            <div class="service-foot"><span class="price">от 5&nbsp;000&nbsp;₽</span><svg class="icon arr"><use href="#i-arrow"/></svg></div>
+          </a>
+          <a class="service-card reveal" href="#booking">
+            <span class="service-ic"><svg class="icon"><use href="#i-film"/></svg></span>
+            <h3>Оклейка плёнкой</h3>
+            <p>Защитная и&nbsp;цветная плёнка, антигравий и&nbsp;бронирование кузова.</p>
+            <div class="service-foot"><span class="price">от 15&nbsp;000&nbsp;₽</span><svg class="icon arr"><use href="#i-arrow"/></svg></div>
+          </a>
+          <a class="service-card reveal" href="#booking">
+            <span class="service-ic"><svg class="icon"><use href="#i-wheel"/></svg></span>
+            <h3>Шиномонтаж</h3>
+            <p>Переобувка, балансировка и&nbsp;сезонное хранение комплектов колёс.</p>
+            <div class="service-foot"><span class="price">от 1&nbsp;000&nbsp;₽</span><svg class="icon arr"><use href="#i-arrow"/></svg></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= GALLERY ========================= -->
+    <section class="gallery section" id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">Галерея работ</p>
+            <h2 class="reveal">Результат, который&nbsp;видно</h2>
+          </div>
+          <p class="section-sub reveal">Реальные проекты студии — от&nbsp;ежедневного ухода до&nbsp;полного преображения автомобиля.</p>
+        </div>
+
+        <div class="works-grid">
+          <figure class="work reveal"><img src="assets/work-1.jpg" alt="Тюнинг спорткара" loading="lazy" width="900" height="675"/><figcaption>Тюнинг · спорткар</figcaption></figure>
+          <figure class="work reveal"><img src="assets/work-2.jpg" alt="Детейлинг салона" loading="lazy" width="900" height="675"/><figcaption>Детейлинг салона</figcaption></figure>
+          <figure class="work reveal"><img src="assets/work-3.jpg" alt="Полировка и обслуживание дисков" loading="lazy" width="900" height="675"/><figcaption>Диски · полировка</figcaption></figure>
+          <figure class="work reveal"><img src="assets/work-4.jpg" alt="Установка кованых дисков" loading="lazy" width="900" height="675"/><figcaption>Колёса · тюнинг</figcaption></figure>
+        </div>
+
+        <h3 class="ba-title reveal">До&nbsp;/&nbsp;После</h3>
+        <div class="ba-grid">
+          <figure class="ba reveal">
+            <div class="ba-pair">
+              <div class="ba-img"><img src="assets/ba-before-1.jpg" alt="Грязный кузов до детейлинга" loading="lazy" width="840" height="630"/><span class="ba-tag ba-tag--before">До</span></div>
+              <div class="ba-img"><img src="assets/ba-after-1.jpg" alt="Кузов после полировки — зеркальный блеск" loading="lazy" width="840" height="630"/><span class="ba-tag ba-tag--after">После</span></div>
+            </div>
+            <figcaption>Детейлинг кузова &amp; защитная полировка</figcaption>
+          </figure>
+          <figure class="ba reveal">
+            <div class="ba-pair">
+              <div class="ba-img"><img src="assets/ba-before-2.jpg" alt="Грязный внедорожник до мойки" loading="lazy" width="840" height="630"/><span class="ba-tag ba-tag--before">До</span></div>
+              <div class="ba-img"><img src="assets/ba-after-2.jpg" alt="Чистый автомобиль после комплексной мойки" loading="lazy" width="840" height="630"/><span class="ba-tag ba-tag--after">После</span></div>
+            </div>
+            <figcaption>Комплексная мойка &amp; химчистка</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= ABOUT ========================= -->
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <img src="assets/about.jpg" alt="Бокс автосервиса APEX Auto Studio" loading="lazy" width="1100" height="760"/>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow reveal">О нас</p>
+          <h2 class="reveal">Современный автосервис с&nbsp;полным спектром услуг</h2>
+          <p class="reveal">Мы объединяем профессиональный подход, современное оборудование и&nbsp;опыт мастеров, чтобы ваш автомобиль получал лучший уход и&nbsp;внимание к&nbsp;каждой детали.</p>
+          <div class="about-stats reveal">
+            <div><b>8+</b><span>лет на&nbsp;рынке</span></div>
+            <div><b>5&nbsp;000+</b><span>довольных клиентов</span></div>
+            <div><b>12</b><span>мастеров в&nbsp;команде</span></div>
+          </div>
+          <a class="btn btn-primary reveal" href="#booking">Записаться на&nbsp;визит <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="adv-grid">
+          <div class="adv-card reveal"><span class="adv-ic"><svg class="icon"><use href="#i-cube"/></svg></span><h4>Качественные материалы</h4><p>Используем только проверенные бренды и&nbsp;составы.</p></div>
+          <div class="adv-card reveal"><span class="adv-ic"><svg class="icon"><use href="#i-gear"/></svg></span><h4>Современное оборудование</h4><p>Точная диагностика и&nbsp;ремонт на&nbsp;новом стенде.</p></div>
+          <div class="adv-card reveal"><span class="adv-ic"><svg class="icon"><use href="#i-users"/></svg></span><h4>Опытные мастера</h4><p>Профессионалы с&nbsp;многолетним стажем.</p></div>
+          <div class="adv-card reveal"><span class="adv-ic"><svg class="icon"><use href="#i-shield"/></svg></span><h4>Гарантия на&nbsp;работы</h4><p>Уверены в&nbsp;качестве — и&nbsp;подтверждаем гарантией.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= BOOKING ========================= -->
+    <section class="booking section" id="booking" aria-label="Онлайн-запись">
+      <div class="container">
+        <div class="section-head center">
+          <div>
+            <p class="eyebrow reveal">Онлайн-запись</p>
+            <h2 class="reveal">Выберите удобное время</h2>
+            <p class="section-sub reveal">Выберите услугу, дату и&nbsp;свободный слот — мы&nbsp;свяжемся с&nbsp;вами для подтверждения.</p>
+          </div>
+        </div>
+
+        <div class="booking-card reveal">
+          <div class="bk-cal">
+            <div class="cal-head">
+              <button class="cal-nav" id="calPrev" type="button" aria-label="Предыдущий месяц"><svg class="icon"><use href="#i-chevron"/></svg></button>
+              <span class="cal-title" id="calTitle">—</span>
+              <button class="cal-nav cal-next" id="calNext" type="button" aria-label="Следующий месяц"><svg class="icon"><use href="#i-chevron"/></svg></button>
+            </div>
+            <div class="cal-weekdays"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
+            <div class="cal-grid" id="calGrid"></div>
+            <p class="cal-hint">Воскресенье и&nbsp;прошедшие даты недоступны</p>
+          </div>
+
+          <div class="bk-slots">
+            <div class="slots-head"><svg class="icon"><use href="#i-clock"/></svg> <span id="slotsDate">Выберите дату слева</span></div>
+            <div class="slots-grid" id="slotsGrid"></div>
+          </div>
+
+          <div class="bk-form">
+            <div class="bk-fields">
+              <label class="field">
+                <span>Услуга</span>
+                <select id="bkService">
+                  <option value="Диагностика">Диагностика</option>
+                  <option value="Ремонт двигателя">Ремонт двигателя</option>
+                  <option value="Тюнинг">Тюнинг</option>
+                  <option value="Детейлинг">Детейлинг</option>
+                  <option value="Оклейка плёнкой">Оклейка плёнкой</option>
+                  <option value="Шиномонтаж">Шиномонтаж</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Ваше имя</span>
+                <input id="bkName" type="text" autocomplete="name" placeholder="Как к вам обращаться" />
+                <em class="error" data-for="bkName"></em>
+              </label>
+              <label class="field">
+                <span>Телефон</span>
+                <input id="bkPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" />
+                <em class="error" data-for="bkPhone"></em>
+              </label>
+            </div>
+            <div class="bk-pick" id="bookingPick"><svg class="icon"><use href="#i-calendar" /></svg><span id="bookingPickText">Дата и время не выбраны</span></div>
+            <button class="btn btn-primary btn-block btn-lg" id="bookConfirm" type="button">Записаться <svg class="icon"><use href="#i-arrow"/></svg></button>
+            <p class="bk-note">Форма демонстрационная — заявки пока не&nbsp;уходят на&nbsp;сервер. Легко подключается к&nbsp;Telegram-боту, CRM или&nbsp;вашему API.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= CONTACTS ========================= -->
+    <!-- ✏️ Телефон, адрес, график и соцсети меняются здесь и в футере. -->
+    <section class="contacts section" id="contacts">
+      <div class="container contacts-grid">
+        <div class="contacts-copy">
+          <p class="eyebrow reveal">Контакты</p>
+          <h2 class="reveal">Приезжайте или&nbsp;напишите нам</h2>
+          <p class="section-sub reveal">Ответим на&nbsp;вопросы, подберём услугу и&nbsp;запишем на&nbsp;удобное время.</p>
+
+          <ul class="contacts-list">
+            <li class="reveal"><span class="ci"><svg class="icon"><use href="#i-phone"/></svg></span><a href="tel:+79991234567"><b>+7 (999) 123-45-67</b><em>Звоните нам</em></a></li>
+            <li class="reveal"><span class="ci"><svg class="icon"><use href="#i-pin"/></svg></span><a href="https://maps.google.com/maps?q=Москва" target="_blank" rel="noopener"><b>г. Москва, ул. Примерная, д. 123</b><em>Наш адрес · открыть на карте</em></a></li>
+            <li class="reveal"><span class="ci"><svg class="icon"><use href="#i-clock"/></svg></span><div class="ci-text"><b>Пн–Вс: 09:00 – 21:00</b><em>График работы</em></div></li>
+          </ul>
+
+          <!-- ✏️ Ссылки на соцсети заменяемы -->
+          <div class="socials reveal">
+            <a class="social social--tg" href="https://t.me/apex_auto" target="_blank" rel="noopener" aria-label="Telegram"><svg class="icon"><use href="#i-telegram"/></svg><span>Telegram</span></a>
+            <a class="social social--max" href="https://max.ru/apex_auto" target="_blank" rel="noopener" aria-label="MAX"><span class="max-mark">M</span><span>MAX</span></a>
+          </div>
+        </div>
+
+        <aside class="contacts-cta reveal">
+          <h3>Остались вопросы?</h3>
+          <p>Оставьте заявку через онлайн-запись — мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время и&nbsp;подберём удобное время визита.</p>
+          <a class="btn btn-primary btn-block btn-lg" href="#booking">Записаться онлайн <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost btn-block" href="https://t.me/apex_auto" target="_blank" rel="noopener">Написать в Telegram <svg class="icon"><use href="#i-send"/></svg></a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 7l14 34h-8l-2.6-7h-7.3L17.5 41h-8L24 7zm-2 21h4l-2-5.4-2 5.4z"/></svg></span>
+          <span class="brand-text"><b>APEX</b><i>AUTO&nbsp;STUDIO</i></span>
+        </a>
+        <p>Премиальный автосервис, тюнинг и&nbsp;детейлинг. Превращаем авто в&nbsp;идеал.</p>
+      </div>
+      <nav class="footer-col" aria-label="Разделы">
+        <h4>Разделы</h4>
+        <a href="#services">Услуги</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#about">О нас</a>
+        <a href="#booking">Запись</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+        <a href="https://maps.google.com/maps?q=Москва" target="_blank" rel="noopener">г. Москва, ул. Примерная, 123</a>
+        <span>Пн–Вс: 09:00 – 21:00</span>
+      </div>
+      <div class="footer-col">
+        <h4>Мы в соцсетях</h4>
+        <div class="footer-socials">
+          <a href="https://t.me/apex_auto" target="_blank" rel="noopener" aria-label="Telegram"><svg class="icon"><use href="#i-telegram"/></svg></a>
+          <a href="https://max.ru/apex_auto" target="_blank" rel="noopener" aria-label="MAX"><span class="max-mark">M</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-year>2026</span> APEX Auto Studio. Все права защищены.</span>
+      <span>г. Москва, ул. Примерная, д. 123</span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Наверх"><svg class="icon"><use href="#i-chevron"/></svg></button>
+
+  <!-- Success modal -->
+  <div class="modal" id="successModal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <span class="modal-check"><svg class="icon"><use href="#i-check"/></svg></span>
+      <h3 id="modalTitle">Запись успешно создана!</h3>
+      <p id="modalText">Мы свяжемся с вами в ближайшее время для подтверждения.</p>
+      <button class="btn btn-primary btn-block" type="button" data-close>Готово</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon"><use href="#i-check"/></svg> <span>Готово!</span></div>
+
+  <!-- i-calendar symbol (added after sprite for clarity) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"/></symbol>
+  </defs></svg>
+
+  <script src="script.js"></script>
+</body>
+</html>

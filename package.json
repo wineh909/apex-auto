@@ -1,0 +1,12 @@
+{
+  "name": "apex-auto-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "APEX Auto Studio — лендинг автосервиса (тюнинг, детейлинг, ремонт)",
+  "scripts": {
+    "serve": "node tools/serve.js 5181"
+  },
+  "devDependencies": {
+    "jimp": "0.22.12"
+  }
+}
